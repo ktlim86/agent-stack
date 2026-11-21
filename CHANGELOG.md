@@ -1,5 +1,36 @@
 # Change log
 
+## v1.2.0 (2026-11-21)
+
+- Add the git, hand-off, and hand-back skills at version 1.0. The package version in `apm.yml` is 1.2.0.
+- The git skill starts each feature on its own branch, checks work in on that branch, and finishes with a pull request or merge request. It does not check in to main.
+- Hand-off gives an existing task to another agent and keeps the same task ID. Hand-back returns that task to the agent that sent it.
+
+| Skill | Version |
+|---|---|
+| git | 1.0 |
+| hand-off | 1.0 |
+| hand-back | 1.0 |
+| data-science-work-check | 1.0 |
+| quant-idea-pipeline | 1.0 |
+| deep-review | 1.0 |
+| simple-english | 1.0 |
+| work-ledger | 1.0 |
+| aws-cloud | 1.0 |
+| azure-cloud | 1.0 |
+| cloud-security | 1.0 |
+| docker | 1.0 |
+| gcp-cloud | 1.0 |
+| github-actions | 1.0 |
+| kubernetes | 1.0 |
+| nextjs-frontend | 1.0 |
+| owasp | 1.0 |
+| react-frontend | 1.0 |
+| vanilla-frontend | 1.0 |
+| vue-frontend | 1.0 |
+
+Earlier skills are unchanged. Agents are unchanged.
+
 ## v1.1.0 (2026-11-21)
 
 - Add twelve skills, sixteen agents, and the orchestrator instructions from the universal agents and skills pack. The package version in `apm.yml` is 1.1.0.
