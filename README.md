@@ -60,7 +60,7 @@ From your project, install release v1.0.0. The `#v1.0.0` at the end selects that
 apm install ktlim86/agent-stack#v1.0.0 --target copilot,claude,cursor,opencode
 ```
 
-`--target` names the tools to write files for: GitHub Copilot (`copilot`), Claude Code (`claude`), Cursor (`cursor`), and OpenCode (`opencode`). If the project already contains that tool's folder, APM can detect the tool and you can leave `--target` off. If it finds no tool, the install stops. See [apm install](https://microsoft.github.io/apm/reference/cli/install/).
+`--target` names the tools to write files for: GitHub Copilot (`copilot`), Claude Code (`claude`), Cursor (`cursor`), and OpenCode (`opencode`). APM can detect a tool that is already set up: a `.claude/` directory or `CLAUDE.md` for Claude Code, a `.cursor/` directory or `.cursorrules` for Cursor, a `.opencode/` directory for OpenCode, and Copilot files under `.github/` for GitHub Copilot. If it finds no tool, the install stops, so pass `--target` on a new project. The exact signals are in [apm install](https://microsoft.github.io/apm/reference/cli/install/) and the [targets matrix](https://microsoft.github.io/apm/reference/targets-matrix/).
 
 Each skill also has its own `Version:` line inside its `SKILL.md`. Skills are not tagged one by one. You install the repository release.
 
