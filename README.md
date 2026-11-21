@@ -61,7 +61,6 @@ The Cursor plugin manifest also points `rules` at that folder, so the file is pa
 
 ## Not included
 
-- `example-skill` is only a template.
 - `.claude/` in the source pack is local Claude settings.
 - `github-release-tooling` is a set of scripts written for one project (`bt_engine`), with hardcoded paths and package names. It is not a shared skill. Four agents still mention it and stop if it is not installed locally.
 
