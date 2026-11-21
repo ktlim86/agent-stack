@@ -1,0 +1,10 @@
+{
+  "name": "agent-stack",
+  "version": "1.0.0",
+  "description": "Shared skills, agents and instructions for an AI agent team, usable in Cursor, Claude Code, OpenCode and GitHub Copilot.",
+  "author": {
+    "name": "ktlim86"
+  },
+  "repository": "https://github.com/ktlim86/agent-stack",
+  "skills": "./.apm/skills/"
+}

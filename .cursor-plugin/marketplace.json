@@ -1,0 +1,17 @@
+{
+  "name": "agent-stack",
+  "owner": {
+    "name": "ktlim86"
+  },
+  "metadata": {
+    "description": "Shared skills, agents and instructions for an AI agent team, usable in Cursor, Claude Code, OpenCode and GitHub Copilot."
+  },
+  "plugins": [
+    {
+      "name": "agent-stack",
+      "source": "./",
+      "description": "Shared skills, agents and instructions for an AI agent team, usable in Cursor, Claude Code, OpenCode and GitHub Copilot.",
+      "skills": "./.apm/skills/"
+    }
+  ]
+}
