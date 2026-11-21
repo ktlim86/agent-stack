@@ -16,16 +16,91 @@ This repository is the version-controlled master copy. Edit here first, through 
 
 SHA-256 is a fixed-length fingerprint made from text, used here so every task has a stable ID.
 
-## Install with Agent Package Manager
+## How to use
 
-Agent Package Manager (APM) is Microsoft's tool for sharing agent skills. To install this release:
+### 1. Install the command-line tool
+
+APM (Agent Package Manager, Microsoft's tool for installing agent packages) is the command-line tool that copies these skills into each coding tool. You also need git, which APM uses to download packages. The install commands below are from the [APM repository](https://github.com/microsoft/apm#get-started).
+
+macOS or Linux, if you already use Homebrew (a package installer):
 
 ```bash
-apm install ktlim86/agent-stack#v1.0.0
+brew install apm
 ```
 
-The `#v1.0.0` pin installs this repository release. Each skill also has its own `Version:` line and a change log inside its `SKILL.md`. Skills are not tagged one by one.
+No extra Homebrew tap is required. Later, update this install with `brew upgrade apm`.
 
-## How to change a skill
+Linux or macOS without Homebrew:
 
-Every edit goes through a pull request. See [CONTRIBUTING.md](CONTRIBUTING.md). In short: branch from `main`, bump the skill's `Version:` and change log, open a pull request, get a `deep-review` verdict, wait for the user to approve and merge, then cut a repository release and sync the Grok Bot library.
+```bash
+curl -sSL https://aka.ms/apm-unix | sh
+```
+
+Open a new terminal after this install. If the terminal still cannot find `apm`, use the path command the installer prints.
+
+Windows (PowerShell):
+
+```powershell
+irm https://aka.ms/apm-windows | iex
+```
+
+Check that the tool runs:
+
+```bash
+apm --version
+```
+
+Other official options (pip, WinGet, and Scoop) are on the [installation page](https://microsoft.github.io/apm/getting-started/installation/).
+
+### 2. Install this stack at a fixed release
+
+From your project, install release v1.0.0. The `#v1.0.0` at the end selects that release, not a later one:
+
+```bash
+apm install ktlim86/agent-stack#v1.0.0 --target copilot,claude,cursor,opencode
+```
+
+`--target` names the tools to write files for: GitHub Copilot (`copilot`), Claude Code (`claude`), Cursor (`cursor`), and OpenCode (`opencode`). If the project already contains that tool's folder, APM can detect the tool and you can leave `--target` off. If it finds no tool, the install stops. See [apm install](https://microsoft.github.io/apm/reference/cli/install/).
+
+Each skill also has its own `Version:` line inside its `SKILL.md`. Skills are not tagged one by one. You install the repository release.
+
+To take a newer release, run the same command with the new tag, for example `apm install ktlim86/agent-stack#v1.1.0`. `apm outdated` reports when a newer tag exists. `apm update` refreshes packages to the latest matching release and asks before it changes anything. See [Update and refresh](https://microsoft.github.io/apm/consumer/update-and-refresh/).
+
+### 3. Where the skills go, and how each tool uses them
+
+`apm install` copies each skill folder into the tool's skill folder. This package ships skills only, so there is no compile step. `apm compile` builds instruction files such as `AGENTS.md` and `CLAUDE.md` from `.apm/instructions/`, which this package does not include. See [apm compile](https://microsoft.github.io/apm/reference/cli/compile/) if you add those later.
+
+In a project, APM writes the skill file here ([skills guide](https://microsoft.github.io/apm/producer/author-primitives/skills/), [targets matrix](https://microsoft.github.io/apm/reference/targets-matrix/)):
+
+| Tool | Skill file after install |
+|---|---|
+| GitHub Copilot | `.agents/skills/<name>/SKILL.md` |
+| Claude Code | `.claude/skills/<name>/SKILL.md` |
+| Cursor | `.agents/skills/<name>/SKILL.md` |
+| OpenCode | `.agents/skills/<name>/SKILL.md` |
+
+`<name>` is the skill name, such as `deep-review`. The tool reads that file when a task matches the skill. A user-wide install (`apm install -g`) uses different folders for some tools. See the [targets matrix](https://microsoft.github.io/apm/reference/targets-matrix/) rather than guessing those paths.
+
+### 4. Manual use, without APM
+
+Copy `.apm/skills/<name>/SKILL.md` into the skill folder in the table above, and keep the `<name>/SKILL.md` layout. For example, deep-review for Cursor or GitHub Copilot goes in `.agents/skills/deep-review/SKILL.md`. For Claude Code it goes in `.claude/skills/deep-review/SKILL.md`.
+
+Or paste the `SKILL.md` text into the chat as instructions.
+
+### 5. Ask for a skill by name
+
+Say the skill name in the request. Example: "use deep-review on this".
+
+| Skill | What to ask it for |
+|---|---|
+| data-science-work-check | Scrutinize a quant data science result before it is reported or approved. |
+| quant-idea-pipeline | Move a quant trading idea through fixed gates, and keep a GitHub issue as the record. |
+| deep-review | Critique your own work, or someone else's, before it is handed off, approved, or reported. |
+| simple-english | Explain technical work in everyday language a non-technical reader can follow. |
+| work-ledger | Append every step of a task to one ledger file, tagged with a SHA-256 task ID. |
+
+SHA-256 (a fixed-length fingerprint made from text) gives each task a stable ID.
+
+### 6. Change a skill
+
+Do not push edits straight to `main`. Follow [CONTRIBUTING.md](CONTRIBUTING.md). In short: create a branch, bump that skill's `Version:` line and its change log, open a pull request, get a `deep-review` verdict, wait for approval and merge, then cut a repository release and sync the Grok Bot library.
