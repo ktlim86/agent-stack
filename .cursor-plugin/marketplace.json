@@ -11,7 +11,9 @@
       "name": "agent-stack",
       "source": "./",
       "description": "Shared skills, agents and instructions for an AI agent team, usable in Cursor, Claude Code, OpenCode and GitHub Copilot.",
-      "skills": "./.apm/skills/"
+      "skills": "./.apm/skills/",
+      "agents": "./.apm/agents/",
+      "rules": "./.apm/instructions/"
     }
   ]
 }
