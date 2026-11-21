@@ -2,12 +2,15 @@
 
 ## v1.2.0 (2026-11-21)
 
-- Add the git skill at version 1.0. The package version in `apm.yml` is 1.2.0.
-- The skill starts each feature on its own branch, checks work in on that branch, and finishes with a pull request or merge request. It does not check in to main.
+- Add the git, hand-off, and hand-back skills at version 1.0. The package version in `apm.yml` is 1.2.0.
+- The git skill starts each feature on its own branch, checks work in on that branch, and finishes with a pull request or merge request. It does not check in to main.
+- Hand-off gives an existing task to another agent and keeps the same task ID. Hand-back returns that task to the agent that sent it.
 
 | Skill | Version |
 |---|---|
 | git | 1.0 |
+| hand-off | 1.0 |
+| hand-back | 1.0 |
 | data-science-work-check | 1.0 |
 | quant-idea-pipeline | 1.0 |
 | deep-review | 1.0 |

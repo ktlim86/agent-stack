@@ -1,12 +1,12 @@
 # agent-stack
 
-Shared skills, agents and instructions for an AI agent team, usable in Cursor, Claude Code, OpenCode and GitHub Copilot through Agent Package Manager (APM). v1.0.0 shipped five skills. v1.1.0 adds twelve engineering skills, sixteen role agents, and one orchestrator instruction file. v1.2.0 adds the git skill.
+Shared skills, agents and instructions for an AI agent team, usable in Cursor, Claude Code, OpenCode and GitHub Copilot through Agent Package Manager (APM). v1.0.0 shipped five skills. v1.1.0 adds twelve engineering skills, sixteen role agents, and one orchestrator instruction file. v1.2.0 adds the git, hand-off, and hand-back skills.
 
 This repository is the version-controlled master copy. Edit here first, through a [pull request](CONTRIBUTING.md). After a release, sync the changed skills into the Grok Bot skill library from this repository. Do not edit a skill only in the Grok Bot library, or the two copies will drift.
 
 ## Skills in v1.2.0
 
-Skills live in `.apm/skills/<name>/`. v1.2.0 adds the git skill. Skills from v1.0.0 and v1.1.0 are unchanged.
+Skills live in `.apm/skills/<name>/`. v1.2.0 adds the git, hand-off, and hand-back skills. Skills from v1.0.0 and v1.1.0 are unchanged.
 
 | Skill | Version | What it is for |
 |---|---|---|
@@ -16,6 +16,8 @@ Skills live in `.apm/skills/<name>/`. v1.2.0 adds the git skill. Skills from v1.
 | [simple-english](.apm/skills/simple-english/SKILL.md) | 1.0 | Explain technical work in everyday language a non-technical reader can follow. |
 | [work-ledger](.apm/skills/work-ledger/SKILL.md) | 1.0 | Append every step of a task to one ledger file, tagged with a SHA-256 task ID. |
 | [git](.apm/skills/git/SKILL.md) | 1.0 | Start each feature on its own branch, save the work there, and open a pull request or merge request instead of checking in to main. |
+| [hand-off](.apm/skills/hand-off/SKILL.md) | 1.0 | Give an existing task to another agent, keep the same task ID, and record it in the work ledger. |
+| [hand-back](.apm/skills/hand-back/SKILL.md) | 1.0 | Return a handed-off task to the agent that sent it, using the same task ID. |
 | [aws-cloud](.apm/skills/aws-cloud/SKILL.md) | 1.0 | AWS setup notes for the infrastructure, devops, and SRE agents. |
 | [azure-cloud](.apm/skills/azure-cloud/SKILL.md) | 1.0 | Azure setup notes for the infrastructure, devops, and SRE agents. |
 | [gcp-cloud](.apm/skills/gcp-cloud/SKILL.md) | 1.0 | Google Cloud setup notes for the infrastructure, devops, and SRE agents. |
@@ -103,7 +105,7 @@ Other official options (pip, WinGet, and Scoop) are on the [installation page](h
 
 ### 2. Install this stack at a fixed release
 
-From your project, install release v1.2.0 after that tag is cut. The `#v1.2.0` at the end selects that release, not a later one. Until the tag exists, v1.0.0 is the last tagged release. It does not include the agents or the git skill.
+From your project, install release v1.2.0 after that tag is cut. The `#v1.2.0` at the end selects that release, not a later one. Until the tag exists, v1.0.0 is the last tagged release. It does not include the agents, or the git, hand-off, and hand-back skills.
 
 ```bash
 apm install ktlim86/agent-stack#v1.2.0 --target copilot,claude,cursor,opencode
@@ -156,6 +158,8 @@ Say the skill name in the request. Example: "use deep-review on this".
 | simple-english | Explain technical work in everyday language a non-technical reader can follow. |
 | work-ledger | Append every step of a task to one ledger file, tagged with a SHA-256 task ID. |
 | git | Start each feature on its own branch, save the work there, and open a pull request or merge request instead of checking in to main. |
+| hand-off | Give an existing task to another agent, keep the same task ID, and record it in the work ledger. |
+| hand-back | Return a handed-off task to the agent that sent it, using the same task ID. |
 | aws-cloud | Look up AWS setup notes before writing infrastructure or a deploy. |
 | azure-cloud | Look up Azure setup notes before writing infrastructure or a deploy. |
 | gcp-cloud | Look up Google Cloud setup notes before writing infrastructure or a deploy. |
