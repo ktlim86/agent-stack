@@ -4,6 +4,8 @@
 
 First versioned release of the shared skill package. The repository is tagged as a whole; each skill also carries its own version.
 
+- Add a Cursor plugin manifest and a marketplace manifest. The plugin points at `.apm/skills/`, so the skill files stay in one place. No skill version changed.
+
 | Skill | Version |
 |---|---|
 | data-science-work-check | 1.0 |

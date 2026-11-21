@@ -66,6 +66,14 @@ Each skill also has its own `Version:` line inside its `SKILL.md`. Skills are no
 
 To take a newer release, run the same command with the new tag, for example `apm install ktlim86/agent-stack#v1.1.0`. `apm outdated` reports when a newer tag exists. `apm update` refreshes packages to the latest matching release and asks before it changes anything. See [Update and refresh](https://microsoft.github.io/apm/consumer/update-and-refresh/).
 
+### Cursor / Grok Bot plugin
+
+Cursor can install this repository as a plugin. The plugin's `skills` path is `.apm/skills/`, so Agent Package Manager and Cursor read the same skill files.
+
+In Cursor, open Customize in the sidebar. Import the repository with From GitHub Repository and paste `https://github.com/ktlim86/agent-stack`. That import requires `.cursor-plugin/marketplace.json`, which this repository has. Then install `agent-stack` and choose user scope (an install for you, not for one project). See [Installing skills from a repository](https://cursor.com/docs/skills#installing-skills-from-a-repository) and [Installing plugins](https://cursor.com/docs/plugins#installing-plugins).
+
+A Grok Bot skill that comes from an installed plugin is recorded with source `plugin` ([OpenTelemetry wire reference](https://cursor.com/docs/enterprise/opentelemetry-export/wire)). The docs do not describe a separate Grok Bot install step. A team can import the same URL from Dashboard → Plugins & MCPs → Add Marketplace → Import from Repo ([Add a team marketplace](https://cursor.com/docs/plugins#add-a-team-marketplace)).
+
 ### 3. Where the skills go, and how each tool uses them
 
 `apm install` copies each skill folder into the tool's skill folder. This package ships skills only, so there is no compile step. `apm compile` builds instruction files such as `AGENTS.md` and `CLAUDE.md` from `.apm/instructions/`, which this package does not include. See [apm compile](https://microsoft.github.io/apm/reference/cli/compile/) if you add those later.
