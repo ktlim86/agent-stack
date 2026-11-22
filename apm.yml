@@ -1,5 +1,5 @@
 name: agent-stack
-version: "1.2.0"
+version: "1.2.1"
 description: 'Shared skills, agents and instructions for an AI agent team, usable in Cursor, Claude Code, OpenCode and GitHub Copilot.'
 author: ktlim86
 dependencies:

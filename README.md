@@ -4,9 +4,9 @@ Shared skills, agents and instructions for an AI agent team, usable in Cursor, C
 
 This repository is the version-controlled master copy. Edit here first, through a [pull request](CONTRIBUTING.md). After a release, sync the changed skills into the Grok Bot skill library from this repository. Do not edit a skill only in the Grok Bot library, or the two copies will drift.
 
-## Skills in v1.2.0
+## Skills in v1.2.1
 
-Skills live in `.apm/skills/<name>/`. v1.2.0 adds the git, hand-off, and hand-back skills. Skills from v1.0.0 and v1.1.0 are unchanged.
+Skills live in `.apm/skills/<name>/`. v1.2.1 enhanced the hand-off, and hand-back skills. Skills from v1.0.0 and v1.1.0 are unchanged.
 
 | Skill | Version | What it is for |
 |---|---|---|
@@ -16,8 +16,8 @@ Skills live in `.apm/skills/<name>/`. v1.2.0 adds the git, hand-off, and hand-ba
 | [simple-english](.apm/skills/simple-english/SKILL.md) | 1.0 | Explain technical work in everyday language a non-technical reader can follow. |
 | [work-ledger](.apm/skills/work-ledger/SKILL.md) | 1.0 | Append every step of a task to one ledger file, tagged with a SHA-256 task ID. |
 | [git](.apm/skills/git/SKILL.md) | 1.0 | Start each feature on its own branch, save the work there, and open a pull request or merge request instead of checking in to main. |
-| [hand-off](.apm/skills/hand-off/SKILL.md) | 1.0 | Give an existing task to another agent, keep the same task ID, and record it in the work ledger. |
-| [hand-back](.apm/skills/hand-back/SKILL.md) | 1.0 | Return a handed-off task to the agent that sent it, using the same task ID. |
+| [hand-off](.apm/skills/hand-off/SKILL.md) | 1.1 | Give an existing task to another agent, keep the same task ID, and record it in the work ledger. |
+| [hand-back](.apm/skills/hand-back/SKILL.md) | 1.1 | Return a handed-off task to the agent that sent it, using the same task ID. |
 | [aws-cloud](.apm/skills/aws-cloud/SKILL.md) | 1.0 | AWS setup notes for the infrastructure, devops, and SRE agents. |
 | [azure-cloud](.apm/skills/azure-cloud/SKILL.md) | 1.0 | Azure setup notes for the infrastructure, devops, and SRE agents. |
 | [gcp-cloud](.apm/skills/gcp-cloud/SKILL.md) | 1.0 | Google Cloud setup notes for the infrastructure, devops, and SRE agents. |

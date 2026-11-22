@@ -1,5 +1,34 @@
 # Change log
 
+## v1.2.0 (2026-11-22)
+
+- Enhance hand-off, and hand-back skills at version 1.1. The package version in `apm.yml` is 1.2.1.
+
+| Skill | Version |
+|---|---|
+| git | 1.0 |
+| hand-off | 1.1 |
+| hand-back | 1.1 |
+| data-science-work-check | 1.0 |
+| quant-idea-pipeline | 1.0 |
+| deep-review | 1.0 |
+| simple-english | 1.0 |
+| work-ledger | 1.0 |
+| aws-cloud | 1.0 |
+| azure-cloud | 1.0 |
+| cloud-security | 1.0 |
+| docker | 1.0 |
+| gcp-cloud | 1.0 |
+| github-actions | 1.0 |
+| kubernetes | 1.0 |
+| nextjs-frontend | 1.0 |
+| owasp | 1.0 |
+| react-frontend | 1.0 |
+| vanilla-frontend | 1.0 |
+| vue-frontend | 1.0 |
+
+Earlier skills are unchanged. Agents are unchanged.
+
 ## v1.2.0 (2026-11-21)
 
 - Add the git, hand-off, and hand-back skills at version 1.0. The package version in `apm.yml` is 1.2.0.
