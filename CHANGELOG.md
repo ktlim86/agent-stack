@@ -1,6 +1,38 @@
 # Change log
 
-## v1.2.0 (2026-11-22)
+## v1.2.2 (2026-11-23)
+
+- Add the delegate-coding-cursor skill at version 1.0. Update hand-off to version 1.2. The package version in `apm.yml` is 1.2.2.
+- delegate-coding-cursor hands coding work to a Cursor coding agent. The user picks a cloud agent or Cursor in a local Docker container for each job. The coding agent follows a set engineering standard and opens a pull request.
+- hand-off 1.2 fixes the example ledger table so it has 8 separator cells, with Type before Task ID.
+
+| Skill | Version |
+|---|---|
+| git | 1.0 |
+| hand-off | 1.2 |
+| hand-back | 1.1 |
+| delegate-coding-cursor | 1.0 |
+| data-science-work-check | 1.0 |
+| quant-idea-pipeline | 1.0 |
+| deep-review | 1.0 |
+| simple-english | 1.0 |
+| work-ledger | 1.0 |
+| aws-cloud | 1.0 |
+| azure-cloud | 1.0 |
+| cloud-security | 1.0 |
+| docker | 1.0 |
+| gcp-cloud | 1.0 |
+| github-actions | 1.0 |
+| kubernetes | 1.0 |
+| nextjs-frontend | 1.0 |
+| owasp | 1.0 |
+| react-frontend | 1.0 |
+| vanilla-frontend | 1.0 |
+| vue-frontend | 1.0 |
+
+Earlier skills are unchanged. Agents are unchanged.
+
+## v1.2.1 (2026-11-22)
 
 - Enhance hand-off, and hand-back skills at version 1.1. The package version in `apm.yml` is 1.2.1.
 
