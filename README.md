@@ -6,7 +6,7 @@ This repository is the version-controlled master copy. Edit here first, through 
 
 ## Skills in v1.2.1
 
-Skills live in `.apm/skills/<name>/`. v1.2.1 enhanced the hand-off, and hand-back skills. Skills from v1.0.0 and v1.1.0 are unchanged.
+Skills live in `.apm/skills/<name>/`. v1.2.1 enhanced the hand-off, and hand-back skills. Skills from v1.0.0 and v1.1.0 are unchanged. This branch also adds `delegate-coding-cursor` 1.0 and updates `hand-off` to 1.2; those will be included in the next repository release.
 
 | Skill | Version | What it is for |
 |---|---|---|
@@ -16,8 +16,9 @@ Skills live in `.apm/skills/<name>/`. v1.2.1 enhanced the hand-off, and hand-bac
 | [simple-english](.apm/skills/simple-english/SKILL.md) | 1.0 | Explain technical work in everyday language a non-technical reader can follow. |
 | [work-ledger](.apm/skills/work-ledger/SKILL.md) | 1.0 | Append every step of a task to one ledger file, tagged with a SHA-256 task ID. |
 | [git](.apm/skills/git/SKILL.md) | 1.0 | Start each feature on its own branch, save the work there, and open a pull request or merge request instead of checking in to main. |
-| [hand-off](.apm/skills/hand-off/SKILL.md) | 1.1 | Give an existing task to another agent, keep the same task ID, and record it in the work ledger. |
+| [hand-off](.apm/skills/hand-off/SKILL.md) | 1.2 | Give an existing task to another agent, keep the same task ID, and record it in the work ledger. |
 | [hand-back](.apm/skills/hand-back/SKILL.md) | 1.1 | Return a handed-off task to the agent that sent it, using the same task ID. |
+| [delegate-coding-cursor](.apm/skills/delegate-coding-cursor/SKILL.md) | 1.0 | Hand coding work to a Cursor coding agent (cloud or in a local Docker container; the user picks each job) under a set engineering standard, then review the pull request. |
 | [aws-cloud](.apm/skills/aws-cloud/SKILL.md) | 1.0 | AWS setup notes for the infrastructure, devops, and SRE agents. |
 | [azure-cloud](.apm/skills/azure-cloud/SKILL.md) | 1.0 | Azure setup notes for the infrastructure, devops, and SRE agents. |
 | [gcp-cloud](.apm/skills/gcp-cloud/SKILL.md) | 1.0 | Google Cloud setup notes for the infrastructure, devops, and SRE agents. |
@@ -160,6 +161,7 @@ Say the skill name in the request. Example: "use deep-review on this".
 | git | Start each feature on its own branch, save the work there, and open a pull request or merge request instead of checking in to main. |
 | hand-off | Give an existing task to another agent, keep the same task ID, and record it in the work ledger. |
 | hand-back | Return a handed-off task to the agent that sent it, using the same task ID. |
+| delegate-coding-cursor | Hand coding work to a Cursor coding agent (cloud or in a local Docker container; the user picks each job) under a set engineering standard, then review the pull request. |
 | aws-cloud | Look up AWS setup notes before writing infrastructure or a deploy. |
 | azure-cloud | Look up Azure setup notes before writing infrastructure or a deploy. |
 | gcp-cloud | Look up Google Cloud setup notes before writing infrastructure or a deploy. |

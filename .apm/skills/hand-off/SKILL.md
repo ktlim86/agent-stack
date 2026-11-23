@@ -9,7 +9,7 @@ description: >-
 ---
 # hand-off
 
-Version: 1.1 (2026-11-22)
+Version: 1.2 (2026-11-23)
 
 Give a task to another agent. The note of the work stays in work-ledger. This skill only says how to pass it on.
 
@@ -30,9 +30,9 @@ The skill names use a hyphen. The ledger step names do not.
 Add this to your own ledger before you deliver the message. If an open handoff of this task ID to this same agent already exists, do not add another. Send the same message again.
 
 | Created Datetime | Receiver | Receiver tool | Sender | Sender tool | Type | Task ID | Remarks |
-|---|---|---|---|---|---|---|
-| 2026-11-21 00:00 +0700 | cursor | cursor | Limsuwanmethwat | Grok Bot | xxxxxxx | hand-off | Handoff of task with SHA-256 fingerprint check. |
-| 2026-11-21 10:00 +0700 |  Limsuwanmethwat | Grok Bot | cursor | cursor | xxxxxxx | hand-back | Handback of task with SHA-256 fingerprint check. |
+|---|---|---|---|---|---|---|---|
+| 2026-11-21 00:00 +0700 | cursor | cursor | Limsuwanmethwat | Grok Bot | hand-off | xxxxxxx | Handoff of task with SHA-256 fingerprint check. |
+| 2026-11-21 10:00 +0700 |  Limsuwanmethwat | Grok Bot | cursor | cursor | hand-back | xxxxxxx | Handback of task with SHA-256 fingerprint check. |
 
 ## Ledger Records Details
 
@@ -116,5 +116,6 @@ If delivery fails, add a correction under work-ledger, do a `sha256` hash again 
 - Packet: the hand-off or hand-back message. The text is the same for every agent.
 
 ## Change log
+- 1.2 (2026-11-23): Fixed ledger table columns (8 separator cells; Type before Task ID in example rows).
 - 1.1 (2026-11-22): Ledger format, SHA-256 fingerprint, and project-folder ledger path.
 - 1.0 (2026-11-21): first version.
