@@ -1,12 +1,12 @@
 # agent-stack
 
-Shared skills, agents and instructions for an AI agent team, usable in Cursor, Claude Code, OpenCode and GitHub Copilot through Agent Package Manager (APM). v1.0.0 shipped five skills. v1.1.0 adds twelve engineering skills, sixteen role agents, and one orchestrator instruction file. v1.2.0 adds the git, hand-off, and hand-back skills.
+Shared skills, agents and instructions for an AI agent team, usable in Cursor, Claude Code, OpenCode and GitHub Copilot through Agent Package Manager (APM). v1.0.0 shipped five skills. v1.1.0 adds twelve engineering skills, sixteen role agents, and one orchestrator instruction file. v1.2.0 adds the git, hand-off, and hand-back skills. v1.2.2 adds the delegate-coding-cursor skill and updates hand-off to 1.2.
 
 This repository is the version-controlled master copy. Edit here first, through a [pull request](CONTRIBUTING.md). After a release, sync the changed skills into the Grok Bot skill library from this repository. Do not edit a skill only in the Grok Bot library, or the two copies will drift.
 
-## Skills in v1.2.1
+## Skills in v1.2.2
 
-Skills live in `.apm/skills/<name>/`. v1.2.1 enhanced the hand-off, and hand-back skills. Skills from v1.0.0 and v1.1.0 are unchanged. This branch also adds `delegate-coding-cursor` 1.0 and updates `hand-off` to 1.2; those will be included in the next repository release.
+Skills live in `.apm/skills/<name>/`. v1.2.2 adds `delegate-coding-cursor` 1.0 and updates `hand-off` to 1.2. Skills from v1.0.0 and v1.1.0 are unchanged.
 
 | Skill | Version | What it is for |
 |---|---|---|
@@ -106,10 +106,10 @@ Other official options (pip, WinGet, and Scoop) are on the [installation page](h
 
 ### 2. Install this stack at a fixed release
 
-From your project, install release v1.2.0 after that tag is cut. The `#v1.2.0` at the end selects that release, not a later one. Until the tag exists, v1.0.0 is the last tagged release. It does not include the agents, or the git, hand-off, and hand-back skills.
+From your project, install release v1.2.2. The `#v1.2.2` at the end selects that release, not a later one. v1.2.2 adds `delegate-coding-cursor` 1.0 and updates `hand-off` to 1.2.
 
 ```bash
-apm install ktlim86/agent-stack#v1.2.0 --target copilot,claude,cursor,opencode
+apm install ktlim86/agent-stack#v1.2.2 --target copilot,claude,cursor,opencode
 ```
 
 `--target` names the tools to write files for: GitHub Copilot (`copilot`), Claude Code (`claude`), Cursor (`cursor`), and OpenCode (`opencode`). APM can detect a tool that is already set up: a `.claude/` directory or `CLAUDE.md` for Claude Code, a `.cursor/` directory or `.cursorrules` for Cursor, a `.opencode/` directory for OpenCode, and Copilot files under `.github/` for GitHub Copilot. If it finds no tool, the install stops, so pass `--target` on a new project. The exact signals are in [apm install](https://microsoft.github.io/apm/reference/cli/install/) and the [targets matrix](https://microsoft.github.io/apm/reference/targets-matrix/).
